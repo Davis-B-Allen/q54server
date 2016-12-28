@@ -1,12 +1,14 @@
 # myapp.rb
-require 'sinatra'
+require 'sinatra/base'
 
-get '/' do
-  'Hello world!!!'
-end
+class MyApp < Sinatra::Base
+  get '/' do
+    'Hello world!!!'
+  end
 
-get '/api/cards' do
-    content_type :json
-    response['Access-Control-Allow-Origin'] = '*'
-    File.read('cards.json')
+  get '/api/cards' do
+      content_type :json
+      response['Access-Control-Allow-Origin'] = '*'
+      File.read('cards.json')
+  end
 end
