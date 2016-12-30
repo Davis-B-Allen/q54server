@@ -2,7 +2,7 @@ require 'csv'
 require 'json'
 
 rootdir = File.expand_path("../", __FILE__)
-csv_to_be_converted = rootdir + "/eg_cards.csv"
+csv_to_be_converted = rootdir + "/cards.csv"
 cards_json_target = rootdir + "/cards.json"
 
 cards_arr = CSV.read(csv_to_be_converted)
