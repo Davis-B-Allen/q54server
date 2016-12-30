@@ -3,7 +3,7 @@ require 'sinatra/base'
 
 class MyApp < Sinatra::Base
   get '/' do
-    'Hello world!!!'
+    erb :index
   end
 
   get '/api/cards' do

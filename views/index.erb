@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q54 Latest Cards</title>
+    <meta charset="utf-8">
+    <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">		 </script>
+  </head>
+  <body>
+
+    <h1>Current Q54 Cards</h1>
+
+    <button type="button" onclick="refreshCards()">Latest Cards</button>
+
+    <pre id="cardsjson"></pre>
+
+    <script>
+
+      $( document ).ready(function() {
+        refreshCards();
+      });
+
+      function refreshCards() {
+        $.get("http://ec2-54-89-225-139.compute-1.amazonaws.com/api/cards",
+          function(data) {
+            var jsonstr = JSON.stringify(data, undefined, 4);
+            document.getElementById("cardsjson").innerHTML = jsonstr;
+          }
+        );
+      }
+
+    </script>
+
+  </body>
+</html>
