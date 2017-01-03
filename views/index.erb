@@ -20,7 +20,7 @@
       });
 
       function refreshCards() {
-        $.get("http://ec2-54-89-225-139.compute-1.amazonaws.com/api/cards",
+        $.get("https://noshortages.org/api/cards",
           function(data) {
             var jsonstr = JSON.stringify(data, undefined, 4);
             document.getElementById("cardsjson").innerHTML = jsonstr;
